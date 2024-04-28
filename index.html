@@ -11,15 +11,13 @@
             margin: 0;
             padding: 0;
             text-align: center; /* Center the text */
-        }
-        header {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            text-align: center;
+            background-image: url('https://source.unsplash.com/1600x900/?technology'); /* Technology-related background */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
         }
         nav {
-            background-color: #444;
+            background-color: rgba(0, 0, 0, 0.8); /* Transparent black color (80% opacity) */
             color: #fff;
             padding: 10px;
             text-align: center;
@@ -30,30 +28,70 @@
             padding: 10px;
             margin: 0 5px;
             transition: color 0.3s;
+            font-weight: bold; /* Make nav links bold */
+            text-shadow: 0px 0px 4px cyan; /* Add cyan shadow */
         }
         nav a:hover {
             color: cyan;
         }
+        /* Change color of YouTube link when hovered */
+        nav a[href*="youtube"]:hover {
+            color: red;
+        }
+        /* Change color of Instagram link when hovered */
+        nav a[href*="instagram"]:hover {
+            color: #e4405f;
+        }
         main {
             padding: 20px;
+            margin-top: 50px; /* Add margin top to avoid content being covered by the fixed header */
+            margin-bottom: 100px; /* Add margin bottom for space for footer */
         }
         section {
             padding: 50px 0;
             color: #fff;
             text-align: center;
-            background-image: url('https://source.unsplash.com/1600x900/?technology'); /* Technology-related background */
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            margin-top: -10px; /* Adjust margin to overlap with header */
+            padding-top: 60px; /* Adjust padding to center content */
         }
         footer {
-            background-color: #333;
+            background-color: #000; /* Black background color */
             color: #fff;
             padding: 10px;
             text-align: center;
             position: fixed;
             bottom: 0;
             width: 100%;
+        }
+
+        /* Dropdown Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: rgba(255, 255, 255, 0.5); /* Transparent white color (50% opacity) */
+            min-width: 160px;
+            z-index: 1;
+            font-size: 10px; /* Reduce font size by 10 pixels */
+        }
+
+        .dropdown-content a {
+            color: black;
+            padding: 8px 16px; /* Reduce padding by 2 pixels on top and bottom */
+            text-decoration: none;
+            display: block;
+        }
+
+        .dropdown-content a:hover {
+            background-color: #f1f1f1;
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
         }
 
         /* Responsive Styles */
@@ -63,40 +101,63 @@
                 margin: 5px 0;
             }
         }
+
+        /* Email Hyperlink Styles */
+        a.email-link {
+            text-decoration: underline;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            text-shadow: 0px 0px 4px cyan; /* Cyan shadow */
+            transition: color 0.3s; /* Smooth color transition */
+        }
+        a.email-link:hover {
+            color: rgb(0, 255, 255); /* Change text color on hover */
+        }
+
+        /* Twitch Hyperlink Styles */
+        a.twitch-link {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        a.twitch-link:hover {
+            color: purple;
+        }
     </style>
 </head>
 <body>
 
-<header>
-    <h1>JacKsoNiaN is a xD</h1>
-</header>
-
 <nav>
     <a href="#home">Home</a>
     <a href="#about">About</a>
-    <a href="#services">Services</a>
-    <a href="#contact">Contact</a>
+    <div class="dropdown">
+        <a href="#" class="dropbtn">YouTube</a>
+        <div class="dropdown-content">
+            <a href="https://youtube.com/@JacKsoNiaNxD?si=1VlHbbij-l4HwGng">JacKsoNiaN</a>
+            <a href="https://youtube.com/@NaturexFree?si=Q09B2dWYWs85kL32">Nature x Free</a>
+        </div>
+    </div>
+    <div class="dropdown">
+        <a href="#" class="dropbtn">Instagram</a>
+        <div class="dropdown-content">
+            <a href="https://www.instagram.com/realseanjackson/" target="_blank">realseanjackson</a>
+            <a href="https://www.instagram.com/ssjss_xD/" target="_blank">ssjss_xD</a>
+            <a href="https://www.instagram.com/naturexfree/" target="_blank">naturexfree</a>
+        </div>
+    </div>
+    <a href="https://www.twitch.tv/jacksonian" class="twitch-link">Twitch</a>
 </nav>
 
 <main>
     <section id="home">
-        <h2>Welcome to JacKsoNiaN's Website</h2>
+        <h2>The Snapback Pirates</h2>
         <p>This is the homepage content. You can customize this section to include information about yourself or your projects.</p>
     </section>
 
     <section id="about">
-        <h2>About JacKsoNiaN</h2>
-        <p>This is the about section. You can provide information about yourself, your interests, and your background here.</p>
-    </section>
-
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>This is the services section. You can list the services you offer or the features of your website here.</p>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>You can contact us at <a href="mailto:xd.cxmhr@passinbox.com">xd.cxmhr@passinbox.com</a></p>
+        <h2>What Do You Want To Do?</h2>
+        <p>Take over the world Pinky.</p>
     </section>
 </main>
 
